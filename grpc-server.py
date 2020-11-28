@@ -5,7 +5,7 @@ from concurrent import futures
 import dsc_pb2
 import dsc_pb2_grpc
 
-from sense_hat import sense_hat
+from sense_hat import SenseHat
 
 class DscServicer(dsc_pb2_grpc.DscServicer):
 
