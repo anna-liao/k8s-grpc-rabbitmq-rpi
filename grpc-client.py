@@ -7,6 +7,9 @@ import grpc
 import argparse
 import logging
 
+import dsc_pb2
+import dsc_pb2_grpc
+
 rpi_addr = "10.0.0.75"
 
 parser = argparse.ArgumentParser(description='gRPC client')
