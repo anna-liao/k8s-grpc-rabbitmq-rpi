@@ -17,13 +17,13 @@ parser.add_argument('sensor', type=str, help='sensor type: h, t, or p')
 args = parser.parse_args()
 
 def humidity(stub):
-    response = stub.Humidity()
+    response = stub.Humidity(dsc_pb2.humidityMsg(h=1))
 
 def temp(stub):
-    response = stub.Temp()
+    response = stub.Temp(dsc_pb2.tempMsg(t=1))
 
 def pressure(stub):
-    response = stub.Pressure()
+    response = stub.Pressure(dsc_pb2.pressureMsg(p=1))
 
 def run():
     with grpc.insecure_channel('{}:50051'.format(rpi_addr)) as channel:

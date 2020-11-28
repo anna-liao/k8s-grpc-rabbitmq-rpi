@@ -9,17 +9,17 @@ from sense_hat import sense_hat
 
 class DscServicer(dsc_pb2_grpc.DscServicer):
 
-    def Humidity(self, context):
+    def Humidity(self, request, context):
         sense = SenseHat()
         humidity = sense.get_humidity()
         return dsc_pb2.humidityReply(humidity=humidity)
 
-    def Temp(self, context):
+    def Temp(self, request, context):
         sense = SenseHat()
         temp = sense.get_temperature()
         return dsc_pb2.tempReply(temp=temp)
 
-    def Pressure(self, context):
+    def Pressure(self, request, context):
         sense = SenseHat()
         pressure = sense.get_pressure()
         return dsc_pb2.pressureReply(pressure=pressure)

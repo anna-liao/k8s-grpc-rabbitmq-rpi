@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\006io.dscB\003DSCP\001\242\002\003DSC',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tdsc.proto\x12\x03\x64sc\"\r\n\x0bhumidityMsg\"\t\n\x07tempMsg\"\r\n\x0bpressureMsg\"!\n\rhumidityReply\x12\x10\n\x08humidity\x18\x01 \x01(\x02\"\x19\n\ttempReply\x12\x0c\n\x04temp\x18\x01 \x01(\x02\"!\n\rpressureReply\x12\x10\n\x08pressure\x18\x01 \x01(\x02\x32\x95\x01\n\x03\x44sc\x12\x32\n\x08Humidity\x12\x10.dsc.humidityMsg\x1a\x12.dsc.humidityReply\"\x00\x12&\n\x04Temp\x12\x0c.dsc.tempMsg\x1a\x0e.dsc.tempReply\"\x00\x12\x32\n\x08Pressure\x12\x10.dsc.pressureMsg\x1a\x12.dsc.pressureReply\"\x00\x42\x15\n\x06io.dscB\x03\x44SCP\x01\xa2\x02\x03\x44SCb\x06proto3'
+  serialized_pb=b'\n\tdsc.proto\x12\x03\x64sc\"\x18\n\x0bhumidityMsg\x12\t\n\x01h\x18\x01 \x01(\x05\"\x14\n\x07tempMsg\x12\t\n\x01t\x18\x01 \x01(\x05\"\x18\n\x0bpressureMsg\x12\t\n\x01p\x18\x01 \x01(\x05\"!\n\rhumidityReply\x12\x10\n\x08humidity\x18\x01 \x01(\x02\"\x19\n\ttempReply\x12\x0c\n\x04temp\x18\x01 \x01(\x02\"!\n\rpressureReply\x12\x10\n\x08pressure\x18\x01 \x01(\x02\x32\x95\x01\n\x03\x44sc\x12\x32\n\x08Humidity\x12\x10.dsc.humidityMsg\x1a\x12.dsc.humidityReply\"\x00\x12&\n\x04Temp\x12\x0c.dsc.tempMsg\x1a\x0e.dsc.tempReply\"\x00\x12\x32\n\x08Pressure\x12\x10.dsc.pressureMsg\x1a\x12.dsc.pressureReply\"\x00\x42\x15\n\x06io.dscB\x03\x44SCP\x01\xa2\x02\x03\x44SCb\x06proto3'
 )
 
 
@@ -33,6 +33,13 @@ _HUMIDITYMSG = _descriptor.Descriptor(
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='h', full_name='dsc.humidityMsg.h', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -46,7 +53,7 @@ _HUMIDITYMSG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=18,
-  serialized_end=31,
+  serialized_end=42,
 )
 
 
@@ -58,31 +65,13 @@ _TEMPMSG = _descriptor.Descriptor(
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=33,
-  serialized_end=42,
-)
-
-
-_PRESSUREMSG = _descriptor.Descriptor(
-  name='pressureMsg',
-  full_name='dsc.pressureMsg',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
+    _descriptor.FieldDescriptor(
+      name='t', full_name='dsc.tempMsg.t', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -96,7 +85,39 @@ _PRESSUREMSG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=44,
-  serialized_end=57,
+  serialized_end=64,
+)
+
+
+_PRESSUREMSG = _descriptor.Descriptor(
+  name='pressureMsg',
+  full_name='dsc.pressureMsg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='p', full_name='dsc.pressureMsg.p', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=66,
+  serialized_end=90,
 )
 
 
@@ -127,8 +148,8 @@ _HUMIDITYREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=59,
-  serialized_end=92,
+  serialized_start=92,
+  serialized_end=125,
 )
 
 
@@ -159,8 +180,8 @@ _TEMPREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=94,
-  serialized_end=119,
+  serialized_start=127,
+  serialized_end=152,
 )
 
 
@@ -191,8 +212,8 @@ _PRESSUREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=121,
-  serialized_end=154,
+  serialized_start=154,
+  serialized_end=187,
 )
 
 DESCRIPTOR.message_types_by_name['humidityMsg'] = _HUMIDITYMSG
@@ -255,8 +276,8 @@ _DSC = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=157,
-  serialized_end=306,
+  serialized_start=190,
+  serialized_end=339,
   methods=[
   _descriptor.MethodDescriptor(
     name='Humidity',

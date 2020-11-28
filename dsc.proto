@@ -33,11 +33,17 @@ service Dsc {
   rpc Pressure (pressureMsg) returns (pressureReply) {}
 }
 
-message humidityMsg {}
+message humidityMsg {
+  int32 h = 1;
+}
 
-message tempMsg {}
+message tempMsg {
+  int32 t = 1;
+}
 
-message pressureMsg {}
+message pressureMsg {
+  int32 p = 1;
+}
 
 message humidityReply {
   // %age relative humidity
