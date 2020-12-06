@@ -1,0 +1,10 @@
+FROM aliaoco/dsc-grpc-base
+
+RUN pip install --upgrade flask jsonpickle pika redis requests
+
+COPY rest-grpc.py .
+COPY dsc_pb2.py .
+COPY dsc_pb2_grpc.py .
+
+EXPOSE 5000
+CMD ['python', 'rest-grpc.py']

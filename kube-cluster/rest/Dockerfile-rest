@@ -1,0 +1,10 @@
+FROM python:3.9-alpine
+
+RUN apk update && apk upgrade && apk add bash
+
+RUN pip3 install --upgrade flask jsonpickle pika redis requests
+
+COPY rest-server.py .
+
+EXPOSE 5000
+CMD ['python3', 'rest-server.py']

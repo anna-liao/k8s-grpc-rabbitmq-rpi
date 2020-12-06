@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest
+spec:
+  selector:
+    matchLabels:
+      app: rest
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: rest
+    spec:
+      containers:
+      - name: python-rest
+        image: aliaoco/lab7-rest:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        - name: RABBITMQ_HOST
+          value: rabbitmq
+        - name: REDIS_HOST
+          value: redis
+        command:
+        - python3
+        args:
+        - rest-server.py
+        ports:
+        - containerPort: 5000

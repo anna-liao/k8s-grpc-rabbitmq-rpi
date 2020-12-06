@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: dsc-frontend
+        image: aliaoco/dsc-frontend:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        - name: RABBITMQ_HOST
+          value: rabbitmq
+        command:
+        - python3
+        args:
+        - frontend.py
+        ports:
+        - containerPort: 5000

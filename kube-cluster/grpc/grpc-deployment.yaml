@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-client
+spec:
+  selector:
+    matchLabels:
+      app: grpc-client
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: grpc-client
+    spec:
+      containers:
+      - name: grpc-client
+        image: aliaoco/dsc-grpc:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        - name: RABBITMQ_HOST
+          value: rabbitmq

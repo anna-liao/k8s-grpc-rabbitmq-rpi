@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: dsc-rest-grpc
+        image: aliaoco/dsc-rest-grpc:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        - name: RABBITMQ_HOST
+          value: rabbitmq
+        command:
+        - python
+        args:
+        - rest-grpc.py
+        ports:
+        - containerPort: 5000
