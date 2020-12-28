@@ -1,7 +1,0 @@
-FROM aliaoco/dsc-grpc-base
-
-COPY grpc-client-rmq.py .
-COPY dsc_pb2.py .
-COPY dsc_pb2_grpc.py .
-
-CMD ['python', 'grpc-client-rmq.py']

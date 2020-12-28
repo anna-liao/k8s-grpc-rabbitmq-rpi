@@ -1,7 +1,0 @@
-FROM dirkcgrunwald/facerec
-
-RUN pip3 install --upgrade pika redis jsonpickle requests flask pillow
-
-WORKDIR /srv
-COPY    worker_server.py /srv
-CMD [ "python3", "worker_server.py"]
